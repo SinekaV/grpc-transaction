@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/Sona-28/netxd_project";
+
+package netxd_customer;
+
+service TransactionService {
+   rpc TransferMoney(TransactionData) returns (TransactionResponse);
+}
+
+message TransactionData {
+    int64 from = 1;
+    int64 to = 2;
+    int64 amount = 3;
+}
+
+message TransactionResponse {
+    string message = 1;
+}
